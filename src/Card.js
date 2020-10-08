@@ -14,7 +14,6 @@ class Card {
         'commas inside of square brackets [ ]'
       ]
       this.invalidCard = true;
-      // this.answers = this.verifyString(answers.toString().split(' '), 1)
     }
   }
   verifyString(data, x) {

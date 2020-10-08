@@ -1,3 +1,5 @@
+const Card = require('../src/Card');
+
 class Deck {
   constructor(cards) {
     if (Array.isArray(cards)) {
@@ -13,4 +15,3 @@ class Deck {
 }
 
 module.exports = Deck;
-const Card = require('../src/Card');
