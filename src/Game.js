@@ -18,12 +18,24 @@ class Game {
     let deckData = [];
     cards.forEach(card => {
       let newCard = new Card(card['id'], card['question'], card['answers'], card['correctAnswer']);
-      deckData.push(newCard);
+      let randomized = this.randomizeAnswers(newCard); // here
+      deckData.push(randomized); // mix with this
     });
     this.deck = new Deck(deckData);
     this.currentRound = new Round(this.deck)
     this.printMessage(this.deck)
     this.printQuestion(this.currentRound)
+  }
+
+  randomizeAnswers(card) {
+    var m = card.answers.length, t, i;
+    while (m) {
+      i = Math.floor(Math.random() * m--);
+      t = card.answers[m];
+      card.answers[m] = card.answers[i];
+      card.answers[i] = t;
+    }
+    return card;
   }
 
   printMessage(deck, round) {
