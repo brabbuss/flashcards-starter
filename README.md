@@ -43,13 +43,15 @@ The game is a simple trivia game going over 30 'flashcards' to answer correctly.
 
 <details>
   <summary>**Under the Hood**</summary>
-For this project, pre-existing code to make the game playable through the CLI (Command-Line-Interface) was provided. Outside of that, students were required to construct the game elements (ES6 Classes) from scratch. The game functions with 
+For this project, pre-existing code to make the game playable through the CLI (Command-Line-Interface) was provided. Outside of that, students were required to construct the game elements (ES6 Classes) from scratch. The game utilizes five `Classes` and their methods to function: `Card`, `Deck`, `Game`, `Round`, `Turn`
 </details>
 
 ![Gameplay](https://user-images.githubusercontent.com/66697338/95536463-58913880-09a8-11eb-9daf-bd15439f734a.gif)
+
 *Flashcards initialization and gameplay*
 
 ![Final Percentage Correct](https://user-images.githubusercontent.com/66697338/95536471-5c24bf80-09a8-11eb-9f36-e03f719269c0.gif)
+
 *End game state, displaying percent of correctly answered questions*
 
 #### Fisher-Yates Shuffle Method
@@ -64,6 +66,7 @@ The method being drawn on was first developed by Ronald Fisher and Frank Yates. 
 Ultimately the implementation of this method presents simply as randomly ordered answer options each time the game is launched, which perhaps is a bit of overkill...however the method is about as random as random gets. 
 
 ![Randomized Answers](https://user-images.githubusercontent.com/66697338/95536768-0d2b5a00-09a9-11eb-81e1-363f7ce97ef4.gif)
+
 *Answer order is randomized each time the game is initialized*
 
 #### Roadmap
