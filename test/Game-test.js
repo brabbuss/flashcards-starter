@@ -2,14 +2,14 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const Game = require('../src/Game');
-const Turn = require('../src/Turn');
+// const Turn = require('../src/Turn');
 const Deck = require('../src/Deck');
 const Card = require('../src/Card');
 const Round = require('../src/Round');
 
 describe('Game', function() {
 
-  let card1, card2, card3, flashcards, deck;
+  let card1, card2, card3, card4, flashcards, deck;
 
   beforeEach (function() {
     card1 = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
@@ -21,8 +21,6 @@ describe('Game', function() {
   });
 
   it('should be a function', function() {
-    const game = new Game();
-
     expect(Game).to.be.a('function');
   });
 

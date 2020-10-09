@@ -2,7 +2,6 @@ const data = require('./data');
 const prototypeQuestions = data.prototypeData;
 const util = require('./util');
 const Deck = require('../src/Deck');
-const Turn = require('../src/Turn');
 const Card = require('../src/Card');
 const Round = require('../src/Round');
 
@@ -14,17 +13,17 @@ class Game {
   }
 
   start() {
-    let cards = data.prototypeData;
+    let cards = prototypeQuestions;
     let deckData = [];
     cards.forEach(card => {
       let newCard = new Card(card['id'], card['question'], card['answers'], card['correctAnswer']);
-      let randomized = this.randomizeAnswers(newCard); // here
-      deckData.push(randomized); // mix with this
+      let randomized = this.randomizeAnswers(newCard);
+      deckData.push(randomized);
     });
     this.deck = new Deck(deckData);
-    this.currentRound = new Round(this.deck)
-    this.printMessage(this.deck)
-    this.printQuestion(this.currentRound)
+    this.currentRound = new Round(this.deck);
+    this.printMessage(this.deck);
+    this.printQuestion(this.currentRound);
   }
 
   randomizeAnswers(card) {

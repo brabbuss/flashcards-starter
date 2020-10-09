@@ -1,4 +1,4 @@
-const Deck = require('../src/Deck');
+// const Deck = require('../src/Deck');
 const Turn = require('../src/Turn');
 
 class Round {
@@ -8,7 +8,7 @@ class Round {
     this.incorrectGuesses = [];
     this.round = null;
   }
-  returnCurrentCard(deck) {
+  returnCurrentCard() {
     return this.deck.cards[0]
   }
   takeTurn(guess) {
@@ -23,7 +23,7 @@ class Round {
   }
   endRound() {
     console.log(`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`);
-    return `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`;
+    return null;
   }
 }
 
