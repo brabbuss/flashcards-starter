@@ -1,6 +1,6 @@
 class Card {
   constructor(id, question, answers, correctAnswer) {
-    this.id = isNaN(id) ? Math.floor(Math.random()*500) : Number(id.toFixed());
+    this.id = isNaN(id) ? Math.floor(Math.random() * 500) : Number(id.toFixed());
     this.question = this.verifyString(question, 2);
     this.invalidCard = false;
     this.correctAnswer = this.verifyString(correctAnswer, 2);
@@ -14,20 +14,21 @@ class Card {
         'commas inside of square brackets [ ]'
       ]
       this.invalidCard = true;
-      // this.answers = this.verifyString(answers.toString().split(' '), 1)
     }
   }
+
   verifyString(data, x) {
     switch (x) {
-      case 1:
+      case 1: {
         let strings = [];
-        let dataToString = data.forEach((answer,i) => {
+        data.forEach((answer) => {
           return typeof answer !== 'string' ? strings.push(answer.toString()) : strings.push(answer);
         });
         return strings
-
-      case 2:
+      }
+      case 2: {
         return [data].toString();
+      }
     }
   }
 }

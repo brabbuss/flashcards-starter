@@ -7,7 +7,6 @@ const Card = require('../src/Card');
 describe('Deck', function() {
 
   it('should be a function', function() {
-    const deck = new Deck();
     expect(Deck).to.be.a('function');
   });
 
@@ -43,15 +42,14 @@ describe('Deck', function() {
     const deck4 = new Deck();
 
     expect(deck1.cards).to.deep.equal([card1, card2]);
-    expect(deck2.cards).to.deep.equal([card1]);  // check against valid Card class object && undefined
+    expect(deck2.cards).to.deep.equal([card1]);
     expect(deck3.cards).to.deep.equal([card1, card2, card3]);
-    expect(deck4.cards).to.equal(undefined); //check how to prevent initialization? Or remove afterward w/self check method?
+    expect(deck4.cards).to.equal(undefined);
   });
 
   it('should only accept Card objects with an `invalidCard` value of false', function() {
     const card1 = new Card(3, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const card2 = new Card(9, 'What is Robbie\'s favorite animal', ('sea otter', 'pug', 'capybara'), 'sea otter');
-    const card3 = new Card(14, 'What organ is Khalid missing?', 1, 'gallbladder');
     const card4 = {brand: 'Pizza Hut', type: 'thin-crust', tasty: false}
     const flashcards1 = [card1, card2, 1];
     const flashcards2 = [card1, 'card33', card4];
@@ -59,7 +57,7 @@ describe('Deck', function() {
     const deck2 = new Deck(flashcards2);
 
     expect(deck1.cards).to.deep.equal([card1]);
-    expect(deck2.cards).to.deep.equal([card1]);  // check against valid Card class object && undefined
+    expect(deck2.cards).to.deep.equal([card1]);
   });
 
   it('should return the amount of cards in the deck', function() {

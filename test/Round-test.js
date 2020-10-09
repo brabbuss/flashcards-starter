@@ -2,7 +2,6 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const Card = require('../src/Card');
-const Turn = require('../src/Turn');
 const Deck = require('../src/Deck');
 const Round = require('../src/Round');
 
@@ -19,8 +18,6 @@ describe('Round', function() {
   });
 
   it('should be a function', function() {
-    const round = new Round();
-
     expect(Round).to.be.a('function');
   });
 
@@ -96,6 +93,6 @@ describe('Round', function() {
     round.takeTurn('capybara')
     round.takeTurn('gallbladder')
 
-    expect(round.endRound()).to.equal('** Round over! ** You answered 33% of the questions correctly!');
+    expect(round.endRound()).to.equal(null);
   });
 });
